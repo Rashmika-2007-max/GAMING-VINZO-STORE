@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMING VINZO STORE - Free Fire Diamond Top-Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary-bg: #0a0a0f;
+            --secondary-bg: #12121a;
+            --accent-red: #ff2a6d;
+            --accent-yellow: #ffd700;
+            --accent-cyan: #00f0ff;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --border-glow: rgba(255, 42, 109, 0.3);
+            --gradient-primary: linear-gradient(135deg, #ff2a6d 0%, #ff6b6b 100%);
+            --gradient-cyan: linear-gradient(135deg, #00f0ff 0%, #00a8ff 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--secondary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-red);
+            border-radius: 4px;
+        }
+
+        /* Animations */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 42, 109, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 42, 109, 0.8); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(255, 42, 109, 0.3); }
+            50% { border-color: rgba(255, 42, 109, 0.8); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-red);
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 100px 5% 50px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 42, 109, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 1;
+            animation: slideIn 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 42, 109, 0.2);
+            border: 1px solid var(--accent-red);
+            border-radius: 50px;
+            color: var(--accent-red);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient-cyan);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-subtitle span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-subtitle span::before {
+            content: '⚡';
+            color: var(--accent-yellow);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(255, 42, 109, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 42, 109, 0.7);
+            animation: glow 1.5s infinite;
+        }
+
+        /* Top-Up Section */
+        .topup-section {
+            padding: 100px 5%;
+            background: var(--secondary-bg);
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .topup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(18, 18, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            animation: borderGlow 3s infinite;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.3);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .price-display {
+            background: linear-gradient(135deg, rgba(255, 42, 109, 0.2), rgba(0, 240, 255, 0.2));
+            border: 2px solid var(--accent-yellow);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-display::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .price-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .price-amount {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin: 0.5rem 0;
+        }
+
+        .diamond-icon {
+            display: inline-block;
+            margin-left: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .buy-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gradient-cyan);
+            color: var(--primary-bg);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.4);
+        }
+
+        .buy-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            color: var(--accent-red);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 100px 5%;
+            background: var(--primary-bg);
+        }
+
+        .steps-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-red);
+            box-shadow: 0 20px 40px rgba(255, 42, 109, 0.2);
+        }
+
+        .step-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-red);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 5%;
+            background: var(--secondary-bg);
+            position: relative;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(10px);
+            border-color: var(--accent-cyan);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #050508;
+            padding: 60px 5% 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-red);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--accent-yellow);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--accent-yellow);
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal {
+            background: var(--secondary-bg);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.8);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-cyan);
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .modal h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .modal p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .modal-close {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-cyan);
+            color: var(--primary-bg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .topup-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .price-amount {
+                font-size: 2rem;
+            }
+
+            .steps-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">GAMING VINZO STORE</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#topup">Top Up</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">⚡ Trusted by 50,000+ Players</div>
+            <h1>Fastest <span class="highlight">Free Fire</span> Diamond Top-Up</h1>
+            <div class="hero-subtitle">
+                <span>Instant delivery</span>
+                <span>Secure payments</span>
+                <span>24/7 support</span>
+            </div>
+            <a href="#topup" class="cta-button">Top Up Now</a>
+        </div>
+    </section>
+
+    <!-- Top-Up Section -->
+    <section id="topup" class="topup-section">
+        <h2 class="section-title">Diamond Top-Up</h2>
+        <div class="topup-container">
+            <form id="topupForm">
+                <div class="form-group">
+                    <label for="uid">Free Fire UID</label>
+                    <input 
+                        type="text" 
+                        id="uid" 
+                        placeholder="Enter your Free Fire UID (e.g., 123456789)" 
+                        maxlength="12"
+                        autocomplete="off"
+                    >
+                    <span class="error-message" id="uidError">Please enter a valid numeric UID</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="package">Select Diamond Package</label>
+                    <select id="package">
+                        <option value="" data-price="0">Choose your package...</option>
+                        <option value="100" data-price="1.99">100 Diamonds</option>
+                        <option value="310" data-price="4.99">310 Diamonds</option>
+                        <option value="520" data-price="7.99">520 Diamonds</option>
+                        <option value="1060" data-price="14.99">1,060 Diamonds</option>
+                        <option value="2180" data-price="29.99">2,180 Diamonds</option>
+                        <option value="5600" data-price="74.99">5,600 Diamonds</option>
+                    </select>
+                </div>
+
+                <div class="price-display">
+                    <div class="price-label">Total Price</div>
+                    <div class="price-amount">
+                        $<span id="priceValue">0.00</span>
+                        <span class="diamond-icon">💎</span>
+                    </div>
+                    <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+                        <span id="diamondCount">0</span> Diamonds
+                    </div>
+                </div>
+
+                <button type="submit" class="buy-button" id="buyButton" disabled>
+                    Buy Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-icon">🎮</div>
+                <h3>Enter UID</h3>
+                <p>Input your Free Fire UID in the field above. Make sure it's correct to avoid delivery issues.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-icon">💎</div>
+                <h3>Choose Package</h3>
+                <p>Select the diamond package that suits your needs. More diamonds = better value!</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-icon">💳</div>
+                <h3>Make Payment</h3>
+                <p>Complete the secure payment using your preferred method. We support multiple payment options.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <div class="step-icon">⚡</div>
+                <h3>Instant Delivery</h3>
+                <p>Diamonds are delivered to your account within 1-5 seconds after payment confirmation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-content">
+                    <h3>Instant Delivery</h3>
+                    <p>Get your diamonds in 1-5 seconds. No waiting, no delays. Our automated system works 24/7.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-content">
+                    <h3>Safe & Secure</h3>
+                    <p>Bank-level encryption for all transactions. Your data and payment information are always protected.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <div class="feature-content">
+                    <h3>Trusted Store</h3>
+                    <p>Over 50,000 successful transactions. Join thousands of satisfied Free Fire players worldwide.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎧</div>
+                <div class="feature-content">
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is always ready to help you with any questions or issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GAMING VINZO STORE</h3>
+                <p>Your trusted destination for Free Fire diamond top-ups. Fast, safe, and reliable service for gamers worldwide.</p>
+                <div class="social-links">
+                    <a href="#" title="WhatsApp">📱</a>
+                    <a href="#" title="Telegram">✈️</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Discord">🎮</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#topup">Top Up</a></p>
+                <p><a href="#how-it-works">How It Works</a></p>
+                <p><a href="#features">Features</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📧 support@gamingvinzo.store</p>
+                <p>📱 WhatsApp: +1 (555) 123-4567</p>
+                <p>✈️ Telegram: @GamingVinzoSupport</p>
+                <p>🕐 Available 24/7</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This site is not affiliated with, endorsed by, or connected to Garena or Free Fire. 
+                All game-related assets and trademarks belong to their respective owners.
+            </div>
+            <p style="margin-top: 2rem;">&copy; 2026 GAMING VINZO STORE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="success-icon">✅</div>
+            <h2>Payment Successful!</h2>
+            <p>Your <strong id="modalDiamonds">0</strong> diamonds have been sent to UID: <strong id="modalUid">0</strong></p>
+            <p style="font-size: 0.9rem; color: var(--accent-cyan);">Delivery time: 1-5 seconds</p>
+            <button class="modal-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const uidInput = document.getElementById('uid');
+        const packageSelect = document.getElementById('package');
+        const priceValue = document.getElementById('priceValue');
+        const diamondCount = document.getElementById('diamondCount');
+        const buyButton = document.getElementById('buyButton');
+        const uidError = document.getElementById('uidError');
+        const topupForm = document.getElementById('topupForm');
+        const successModal = document.getElementById('successModal');
+        const modalDiamonds = document.getElementById('modalDiamonds');
+        const modalUid = document.getElementById('modalUid');
+
+        // State
+        let isUidValid = false;
+        let isPackageSelected = false;
+
+        // UID Validation - Numbers only
+        uidInput.addEventListener('input', function(e) {
+            // Remove non-numeric characters
+            this.value = this.value.replace(/[^0-9]/g, '');
+            
+            // Validate length (Free Fire UIDs are typically 8-12 digits)
+            if (this.value.length >= 8 && this.value.length <= 12) {
+                isUidValid = true;
+                uidError.style.display = 'none';
+                this.style.borderColor = 'var(--accent-cyan)';
+            } else if (this.value.length > 0) {
+                isUidValid = false;
+                uidError.style.display = 'block';
+                this.style.borderColor = 'var(--accent-red)';
+            } else {
+                isUidValid = false;
+                uidError.style.display = 'none';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            }
+            
+            updateBuyButton();
+        });
+
+        // Package Selection
+        packageSelect.addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const price = selectedOption.getAttribute('data-price');
+            const diamonds = selectedOption.value;
+            
+            if (diamonds) {
+                isPackageSelected = true;
+                // Animate price change
+                animateValue(priceValue, parseFloat(priceValue.textContent), parseFloat(price), 500);
+                diamondCount.textContent = diamonds;
+            } else {
+                isPackageSelected = false;
+                priceValue.textContent = '0.00';
+                diamondCount.textContent = '0';
+            }
+            
+            updateBuyButton();
+        });
+
+        // Update Buy Button State
+        function updateBuyButton() {
+            if (isUidValid && isPackageSelected) {
+                buyButton.disabled = false;
+                buyButton.textContent = 'Buy Now';
+            } else {
+                buyButton.disabled = true;
+                buyButton.textContent = isUidValid ? 'Select Package' : 'Enter Valid UID';
+            }
+        }
+
+        // Number Animation
+        function animateValue(element, start, end, duration) {
+            const range = end - start;
+            const minTimer = 50;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            stepTime = Math.max(stepTime, minTimer);
+            
+            let startTime = new Date().getTime();
+            let endTime = startTime + duration;
+            let timer;
+            
+            function run() {
+                let now = new Date().getTime();
+                let remaining = Math.max((endTime - now) / duration, 0);
+                let value = Math.round(end - (remaining * range));
+                element.textContent = value.toFixed(2);
+                if (value == end) {
+                    clearInterval(timer);
+                }
+            }
+            
+            timer = setInterval(run, stepTime);
+            run();
+        }
+
+        // Form Submission
+        topupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!isUidValid || !isPackageSelected) return;
+            
+            // Show loading state
+            buyButton.disabled = true;
+            buyButton.innerHTML = '<span class="loading"></span> Processing...';
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                const diamonds = packageSelect.options[packageSelect.selectedIndex].value;
+                const uid = uidInput.value;
+                
+                modalDiamonds.textContent = diamonds;
+                modalUid.textContent = uid;
+                
+                // Show success modal
+                successModal.classList.add('active');
+                
+                // Reset form
+                buyButton.disabled = false;
+                buyButton.textContent = 'Buy Now';
+                topupForm.reset();
+                priceValue.textContent = '0.00';
+                diamondCount.textContent = '0';
+                isUidValid = false;
+                isPackageSelected = false;
+                updateBuyButton();
+            }, 2000);
+        });
+
+        // Close Modal
+        function closeModal() {
+            successModal.classList.remove('active');
+        }
+
+        // Close modal on overlay click
+        successModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 15, 0.98)';
+                nav.style.boxShadow = '0 5px 30px rgba(0,0,0,0.5)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 15, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.step-card, .feature-card').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
